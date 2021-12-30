@@ -91,9 +91,9 @@ export function getFinalSpeed(gen: Generation, pokemon: Pokemon, field: Field, s
 
   if ((pokemon.hasAbility('Unburden') && pokemon.abilityOn) ||
       (pokemon.hasAbility('Chlorophyll') && weather.includes('Sun')) ||
-      (pokemon.hasAbility('Sand Rush') && weather === 'Sand') ||
+      (pokemon.hasAbility('Sand Rush') && (weather === 'Sand' || weather === 'Desert Gales')) ||
       (pokemon.hasAbility('Swift Swim') && weather.includes('Rain')) ||
-      (pokemon.hasAbility('Slush Rush') && weather === 'Hail') ||
+      (pokemon.hasAbility('Slush Rush') && (weather === 'Hail' || weather === 'Diamond Dust')) ||
       (pokemon.hasAbility('Surge Surfer') && terrain === 'Electric')
   ) {
     speed *= 2;
@@ -118,12 +118,16 @@ export function getMoveEffectiveness(
   move: Move,
   type: TypeName,
   isGhostRevealed?: boolean,
-  isGravity?: boolean
+  isGravity?: boolean,
+  isAcidic?: boolean
 ) {
+
   if (isGhostRevealed && type === 'Ghost' && move.hasType('Normal', 'Fighting')) {
     return 1;
   } else if (isGravity && type === 'Flying' && move.hasType('Ground')) {
     return 1;
+  } else if (isAcidic && type === 'Steel' && move.hasType('Poison')) {
+	  return 1;
   } else if (move.named('Freeze-Dry') && type === 'Water') {
     return 2;
   } else if (move.named('Flying Press')) {
