@@ -69,7 +69,6 @@ export class Side implements State.Side {
   isTailwind: boolean;
   isHelpingHand: boolean;
   isFriendGuard: boolean;
-  isPoolFloaties: boolean;
   isAuroraVeil: boolean;
   isBattery: boolean;
   isSwitching?: 'out' | 'in';
@@ -90,7 +89,6 @@ export class Side implements State.Side {
     this.isTailwind = !!side.isTailwind;
     this.isHelpingHand = !!side.isHelpingHand;
     this.isFriendGuard = !!side.isFriendGuard;
-	this.isPoolFloaties = !!side.isPoolFloaties;
     this.isAuroraVeil = !!side.isAuroraVeil;
     this.isBattery = !!side.isBattery;
     this.isSwitching = side.isSwitching;
