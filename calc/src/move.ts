@@ -34,7 +34,10 @@ export class Move implements State.Move {
   priority: number;
   dropsStats?: number;
   ignoreDefensive: boolean;
-  defensiveCategory: I.MoveCategory;
+  overrideOffensiveStat?: I.StatIDExceptHP;
+  overrideDefensiveStat?: I.StatIDExceptHP;
+  overrideOffensivePokemon?: 'target' | 'source';
+  overrideDefensivePokemon?: 'target' | 'source';
   breaksProtect: boolean;
   isZ: boolean;
   isMax: boolean;
@@ -58,7 +61,8 @@ export class Move implements State.Move {
       const maxMoveName: string = getMaxMoveName(
         data.type,
         options.species,
-        !!(data.category === 'Status')
+        !!(data.category === 'Status'),
+        options.ability
       );
       const maxMove = gen.moves.get(toID(maxMoveName));
       const maxPower = () => {
@@ -133,14 +137,17 @@ export class Move implements State.Move {
     this.struggleRecoil = !!data.struggleRecoil;
     this.isCrit = !!options.isCrit || !!data.willCrit ||
       // These don't *always* crit (255/256 chance), but for the purposes of the calc they do
-      gen.num === 1 && ['crabhammer', 'razorleaf', 'slash'].includes(data.id);
+      gen.num === 1 && ['crabhammer', 'razorleaf', 'slash', 'karate chop'].includes(data.id);
     this.drain = data.drain;
     this.flags = data.flags;
     // The calc doesn't currently care about negative priority moves so we simply default to 0
     this.priority = data.priority || 0;
 
     this.ignoreDefensive = !!data.ignoreDefensive;
-    this.defensiveCategory = data.defensiveCategory || this.category;
+    this.overrideOffensiveStat = data.overrideOffensiveStat;
+    this.overrideDefensiveStat = data.overrideDefensiveStat;
+    this.overrideOffensivePokemon = data.overrideOffensivePokemon;
+    this.overrideDefensivePokemon = data.overrideDefensivePokemon;
     this.breaksProtect = !!data.breaksProtect;
     this.isZ = !!data.isZ;
     this.isMax = !!data.isMax;
@@ -232,8 +239,14 @@ const ZMOVES_TYPING: {
   Water: 'Hydro Vortex',
 };
 
-export function getMaxMoveName(moveType: I.TypeName, pokemonSpecies?: string, isStatus?: boolean) {
+export function getMaxMoveName(
+  moveType: I.TypeName,
+  pokemonSpecies?: string,
+  isStatus?: boolean,
+  pokemonAbility?: string
+) {
   if (isStatus) return 'Max Guard';
+  if (pokemonAbility === 'Normalize') return 'Max Strike';
   if (moveType === 'Fire') {
     if (pokemonSpecies === 'Charizard-Gmax') return 'G-Max Wildfire';
     if (pokemonSpecies === 'Centiskorch-Gmax') return 'G-Max Centiferno';
@@ -243,6 +256,10 @@ export function getMaxMoveName(moveType: I.TypeName, pokemonSpecies?: string, is
     if (pokemonSpecies === 'Eevee-Gmax') return 'G-Max Cuddle';
     if (pokemonSpecies === 'Meowth-Gmax') return 'G-Max Gold Rush';
     if (pokemonSpecies === 'Snorlax-Gmax') return 'G-Max Replenish';
+    if (pokemonAbility === 'Pixilate') return 'Max Starfall';
+    if (pokemonAbility === 'Aerilate') return 'Max Airstream';
+    if (pokemonAbility === 'Refrigerate') return 'Max Hailstorm';
+    if (pokemonAbility === 'Galvanize') return 'Max Lightning';
   }
   if (moveType === 'Fairy') {
     if (pokemonSpecies === 'Alcremie-Gmax') return 'G-Max Finale';

@@ -72,7 +72,7 @@ var bounds = {
 	"evs": [0, 252],
 	"ivs": [0, 31],
 	"dvs": [0, 15],
-	"move-bp": [0, 999]
+	"move-bp": [0, 65535]
 };
 for (var bounded in bounds) {
 	attachValidation(bounded, bounds[bounded][0], bounds[bounded][1]);
@@ -819,6 +819,8 @@ function getMoveDetails(moveInfo, species, ability, item, useMax) {
 
 function createField() {
 	var gameType = $("input:radio[name='format']:checked").val();
+	var isMagicRoom = $("#magicroom").prop("checked");
+	var isWonderRoom = $("#wonderroom").prop("checked");
 	var isGravity = $("#gravity").prop("checked");
 	var isSR = [$("#srL").prop("checked"), $("#srR").prop("checked")];
 	var weather;
@@ -846,6 +848,7 @@ function createField() {
 	var isFriendGuard = [$("#friendGuardL").prop("checked"), $("#friendGuardR").prop("checked")];
 	var isAuroraVeil = [$("#auroraVeilL").prop("checked"), $("#auroraVeilR").prop("checked")];
 	var isBattery = [$("#batteryL").prop("checked"), $("#batteryR").prop("checked")];
+	var isPowerSpot = [$("#powerSpotL").prop("checked"), $("#powerSpotR").prop("checked")];
 	// TODO: support switching in as well!
 	var isSwitchingOut = [$("#switchingL").prop("checked"), $("#switchingR").prop("checked")];
 
@@ -856,11 +859,11 @@ function createField() {
 			isReflect: isReflect[i], isLightScreen: isLightScreen[i],
 			isProtected: isProtected[i], isSeeded: isSeeded[i], isForesight: isForesight[i],
 			isTailwind: isTailwind[i], isHelpingHand: isHelpingHand[i], isFriendGuard: isFriendGuard[i],
-			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isSwitching: isSwitchingOut[i] ? 'out' : undefined
+			isAuroraVeil: isAuroraVeil[i], isBattery: isBattery[i], isPowerSpot: isPowerSpot[i], isSwitching: isSwitchingOut[i] ? 'out' : undefined
 		});
 	};
 	return new calc.Field({
-		gameType: gameType, weather: weather, terrain: terrain, isGravity: isGravity,
+		gameType: gameType, weather: weather, terrain: terrain, isMagicRoom: isMagicRoom, isWonderRoom: isWonderRoom, isGravity: isGravity,
 		attackerSide: createSide(0), defenderSide: createSide(1)
 	});
 }
@@ -884,8 +887,8 @@ function calcHP(poke) {
 	$currentHP.attr('data-set', true);
 }
 
-function calcStat(poke, statName) {
-	var stat = poke.find("." + statName);
+function calcStat(poke, StatID) {
+	var stat = poke.find("." + StatID);
 	var base = ~~stat.find(".base").val();
 	var level = ~~poke.find(".level").val();
 	var nature, ivs, evs;
@@ -895,11 +898,11 @@ function calcStat(poke, statName) {
 	} else {
 		ivs = ~~stat.find(".ivs").val();
 		evs = ~~stat.find(".evs").val();
-		if (statName !== "hp") nature = poke.find(".nature").val();
+		if (StatID !== "hp") nature = poke.find(".nature").val();
 	}
 	// Shedinja still has 1 max HP during the effect even if its Dynamax Level is maxed (DaWoblefet)
-	var total = calc.calcStat(gen, legacyStatToStat(statName), base, ivs, evs, level, nature);
-	if (gen > 7 && statName === "hp" && poke.isDynamaxed && total !== 1) {
+	var total = calc.calcStat(gen, legacyStatToStat(StatID), base, ivs, evs, level, nature);
+	if (gen > 7 && StatID === "hp" && poke.isDynamaxed && total !== 1) {
 		total *= 2;
 	}
 	stat.find(".total").text(total);
