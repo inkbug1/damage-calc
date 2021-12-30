@@ -59,7 +59,6 @@ export namespace State {
     isTailwind?: boolean;
     isHelpingHand?: boolean;
     isFriendGuard?: boolean;
-	isPoolFloaties?: boolean;
     isAuroraVeil?: boolean;
     isBattery?: boolean;
     isSwitching?: 'out' | 'in';

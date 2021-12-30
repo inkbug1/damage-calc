@@ -291,16 +291,6 @@ const SS = SM.concat([
   'Transistor',
   'Unseen Fist',
   'Wandering Spirit',
-  //MFA
-  'Soot Guard',
-  'Second Wind',
-  'Body of Water',
-  'Sleight of Hand',
-  'Ignite',
-  'Acidic Surge',
-  'Pool Floaties',
-  'Desert Gales', 
-  'Diamond Dust',
 ]);
 
 export const ABILITIES = [[], RBY, GSC, ADV, DPP, BW, XY, SM, SS];

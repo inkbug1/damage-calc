@@ -23,7 +23,6 @@ export interface RawDesc {
   isAuroraVeil?: boolean;
   isFriendGuard?: boolean;
   isHelpingHand?: boolean;
-  isPoolFloaties?: boolean;
   isCritical?: boolean;
   isLightScreen?: boolean;
   isBurned?: boolean;
