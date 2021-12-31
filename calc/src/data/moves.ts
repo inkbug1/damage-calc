@@ -3480,6 +3480,14 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     zp: 185,
     maxPower: 140,
   },
+  'Plaque Fang': {
+	bp: 80,
+	type: 'Poison',
+	category: 'Physical',
+	secondaries: true,
+	makesContact: true,
+	isBite: true,
+  },
   'Pyro Ball': {
     bp: 120,
     type: 'Fire',
