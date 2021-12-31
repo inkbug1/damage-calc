@@ -46,10 +46,6 @@ var CALC_STATUS = {
 	'Frozen': 'frz'
 };
 
-var customsets = {
-	"Balleringue":{"Life Orb":{"level":100,"ability":"Triage","item":"Life Orb","nature":"Brave","evs":{"hp":252,"at":252,"sd":4},"moves":["Leech Life","Gyro Ball","Rapid Spin","Stealth Rock"]}}
-};
-
 function legacyStatToStat(st) {
 	switch (st) {
 	case 'hp':
