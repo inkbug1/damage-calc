@@ -7487,6 +7487,7 @@ var SS_PATCH = {
     Ariados: { nfe: true },
     Articuno: { otherFormes: ['Articuno-Galar'] },
     Blastoise: { otherFormes: ['Blastoise-Gmax', 'Blastoise-Mega'] },
+    Boldore: { otherFormes: ['Boldore-Kalos'] },
     Butterfree: { otherFormes: ['Butterfree-Gmax'] },
     Carnivine: { nfe: true },
     Charizard: { otherFormes: ['Charizard-Gmax', 'Charizard-Mega-X', 'Charizard-Mega-Y'] },
@@ -7502,21 +7503,30 @@ var SS_PATCH = {
     'Farfetch\u2019d': { otherFormes: ['Farfetch\u2019d-Galar'] },
     Garbodor: { otherFormes: ['Garbodor-Gmax'] },
     Gengar: { otherFormes: ['Gengar-Gmax', 'Gengar-Mega'] },
+    Gigalith: { otherFormes: ['Gigalith-Kalos'] },
+    Gourgeist: { nfe: true },
+    'Gourgeist-Small': { nfe: true },
+    'Gourgeist-Large': { nfe: true },
+    'Gourgeist-Super': { nfe: true },
     Heatmor: { nfe: true },
-    Inkay: { otherFormes: ['Inkay-Variant'] },
+    Inkay: { otherFormes: ['Inkay-Alola'] },
     Kingler: { otherFormes: ['Kingler-Gmax'] },
     Lapras: { otherFormes: ['Lapras-Gmax'] },
     Ledian: { nfe: true },
     Linoone: { otherFormes: ['Linoone-Galar'] },
+    Lunatone: { nfe: true },
+    Lycanroc: { otherFormes: ['Lycanroc-Dusk', 'Lycanroc-Midnight', 'Lycanroc-Arctara'] },
     Machamp: { otherFormes: ['Machamp-Gmax'] },
-    Malamar: { otherFormes: ['Malamar-Variant'] },
+    Magcargo: { otherFormes: ['Magcargo-Galar'] },
+    Malamar: { otherFormes: ['Malamar-Alola'] },
     Melmetal: { otherFormes: ['Melmetal-Gmax'] },
     Meowth: { otherFormes: ['Meowth-Alola', 'Meowth-Galar', 'Meowth-Gmax'] },
-    Mienshao: { otherFormes: ['Mienshao-Variant'] },
+    Mienshao: { otherFormes: ['Mienshao-Yaoguai'] },
     Mismagius: { nfe: true },
     Moltres: { otherFormes: ['Moltres-Galar'] },
     'Mr. Mime': { otherFormes: ['Mr. Mime-Galar'] },
     Noctowl: { nfe: true },
+    Persian: { nfe: true },
     Pikachu: {
         otherFormes: [
             'Pikachu-Alola',
@@ -7533,15 +7543,29 @@ var SS_PATCH = {
     Ponyta: { otherFormes: ['Ponyta-Galar'] },
     Rapidash: { otherFormes: ['Rapidash-Galar'] },
     Raticate: { nfe: true },
+    Roggenrola: { otherFormes: ['Roggenrola-Kalos'] },
+    Scolipede: { otherFormes: ['Scolipede-Variant'] },
     Scrafty: { nfe: true },
+    Shiinotic: { otherFormes: ['Shiinotic-Kalos'] },
     Slowbro: { otherFormes: ['Slowbro-Galar', 'Slowbro-Mega'] },
     Slowking: { otherFormes: ['Slowking-Galar'] },
     Slowpoke: { otherFormes: ['Slowpoke-Galar'] },
+    Slugma: { otherFormes: ['Slugma-Galar'] },
+    Slurpuff: { otherFormes: ['Slurpuff-Variant'] },
     Snorlax: { otherFormes: ['Snorlax-Gmax'] },
+    Solrock: { nfe: true },
+    Starmie: { otherFormes: ['Starmie-Variant'] },
+    Staryu: { otherFormes: ['Staryu-Variant'] },
     Stunfisk: { otherFormes: ['Stunfisk-Galar'] },
+    Swirlix: { otherFormes: ['Swirlix-Variant'] },
+    Tropius: { nfe: true },
+    Unown: { nfe: true },
+    Venipede: { otherFormes: ['Venipede-Variant'] },
     Venusaur: { otherFormes: ['Venusaur-Gmax', 'Venusaur-Mega'] },
     Voodoom: { bs: { sa: 130 } },
     Weezing: { otherFormes: ['Weezing-Galar'] },
+    Whirlipede: { otherFormes: ['Whirlipede-Variant'] },
+    Whiscash: { nfe: true },
     'Wormadam-Trash': { nfe: true },
     Yamask: { otherFormes: ['Yamask-Galar'] },
     Zapdos: { otherFormes: ['Zapdos-Galar'] },
@@ -7649,6 +7673,14 @@ var SS_PATCH = {
         abilities: { 0: 'Swarm' },
         nfe: true
     },
+    'Boldore-Kalos': {
+        types: ['Rock', 'Electric'],
+        bs: { hp: 70, at: 50, df: 105, sa: 105, sd: 40, sp: 20 },
+        weightkg: 102,
+        abilities: { 0: 'Sturdy' },
+        nfe: true,
+        baseSpecies: 'Boldore'
+    },
     Boltund: {
         types: ['Electric'],
         bs: { hp: 69, at: 90, df: 60, sa: 90, sd: 60, sp: 121 },
@@ -7692,6 +7724,12 @@ var SS_PATCH = {
         weightkg: 78,
         abilities: { 0: 'Steam Engine' },
         nfe: true
+    },
+    Carnelion: {
+        types: ['Normal', 'Rock'],
+        bs: { hp: 85, at: 105, df: 70, sa: 95, sd: 70, sp: 120 },
+        weightkg: 32,
+        abilities: { 0: 'Limber' }
     },
     Carnivenom: {
         types: ['Grass', 'Poison'],
@@ -7962,6 +8000,18 @@ var SS_PATCH = {
         abilities: { 0: 'Light Metal' },
         baseSpecies: 'Duraludon'
     },
+    Dusglow: {
+        types: ['Ghost', 'Fairy'],
+        bs: { hp: 45, at: 85, df: 105, sa: 115, sd: 105, sp: 70 },
+        weightkg: 106.6,
+        abilities: { 0: 'Pressure' }
+    },
+    Eclipseroid: {
+        types: ['Rock', 'Ghost'],
+        bs: { hp: 90, at: 100, df: 90, sa: 100, sd: 90, sp: 70 },
+        weightkg: 154,
+        abilities: { 0: 'Levitate' }
+    },
     'Eevee-Gmax': {
         types: ['Normal'],
         bs: { hp: 55, at: 55, df: 50, sa: 45, sd: 65, sp: 55 },
@@ -8010,7 +8060,16 @@ var SS_PATCH = {
         bs: { hp: 65, at: 100, df: 100, sa: 70, sd: 60, sp: 75 },
         weightkg: 62,
         abilities: { 0: 'Battle Armor' },
-        gender: 'N'
+        gender: 'N',
+        otherFormes: ['Falinks-Terracotta']
+    },
+    'Falinks-Terracotta': {
+        types: ['Fighting', 'Rock'],
+        bs: { hp: 65, at: 100, df: 100, sa: 60, sd: 60, sp: 85 },
+        weightkg: 62,
+        abilities: { 0: 'Solid Rock' },
+        gender: 'N',
+        baseSpecies: 'Falinks'
     },
     'Farfetch\u2019d-Galar': {
         types: ['Fighting'],
@@ -8019,6 +8078,12 @@ var SS_PATCH = {
         abilities: { 0: 'Steadfast' },
         nfe: true,
         baseSpecies: 'Farfetch\u2019d'
+    },
+    Farmunk: {
+        types: ['Normal', 'Grass'],
+        bs: { hp: 130, at: 85, df: 115, sa: 95, sd: 75, sp: 20 },
+        weightkg: 6,
+        abilities: { 0: 'Cheek Pouch' }
     },
     Flapple: {
         types: ['Grass', 'Dragon'],
@@ -8054,6 +8119,13 @@ var SS_PATCH = {
         abilities: { 0: 'Cursed Body' },
         baseSpecies: 'Gengar'
     },
+    'Gigalith-Kalos': {
+        types: ['Rock', 'Electric'],
+        bs: { hp: 85, at: 60, df: 130, sa: 135, sd: 80, sp: 25 },
+        weightkg: 260,
+        abilities: { 0: 'Sturdy' },
+        baseSpecies: 'Gigalith'
+    },
     Glastrier: {
         types: ['Ice'],
         bs: { hp: 100, at: 145, df: 130, sa: 65, sd: 110, sp: 30 },
@@ -8084,7 +8156,8 @@ var SS_PATCH = {
         types: ['Normal'],
         bs: { hp: 120, at: 95, df: 95, sa: 55, sd: 75, sp: 20 },
         weightkg: 6,
-        abilities: { 0: 'Cheek Pouch' }
+        abilities: { 0: 'Cheek Pouch' },
+        nfe: true
     },
     Grimmsnarl: {
         types: ['Dark', 'Fairy'],
@@ -8168,7 +8241,7 @@ var SS_PATCH = {
         abilities: { 0: 'Own Tempo' },
         baseSpecies: 'Indeedee'
     },
-    'Inkay-Variant': {
+    'Inkay-Alola': {
         types: ['Dark', 'Water'],
         bs: { hp: 53, at: 59, df: 53, sa: 27, sd: 56, sp: 40 },
         weightkg: 3.5,
@@ -8189,6 +8262,34 @@ var SS_PATCH = {
         weightkg: 0,
         abilities: { 0: 'Torrent' },
         baseSpecies: 'Inteleon'
+    },
+    Jackourd: {
+        types: ['Ghost', 'Grass'],
+        bs: { hp: 75, at: 102, df: 122, sa: 67, sd: 75, sp: 90 },
+        weightkg: 12.5,
+        abilities: { 0: 'Pickup' },
+        otherFormes: ['Jackourd-Small', 'Jackourd-Large', 'Jackourd-Super']
+    },
+    'Jackourd-Small': {
+        types: ['Ghost', 'Grass'],
+        bs: { hp: 65, at: 103, df: 122, sa: 58, sd: 75, sp: 108 },
+        weightkg: 9.5,
+        abilities: { 0: 'Pickup' },
+        baseSpecies: 'Jackourd'
+    },
+    'Jackourd-Large': {
+        types: ['Ghost', 'Grass'],
+        bs: { hp: 85, at: 101, df: 122, sa: 76, sd: 75, sp: 72 },
+        weightkg: 14,
+        abilities: { 0: 'Pickup' },
+        baseSpecies: 'Jackourd'
+    },
+    'Jackourd-Super': {
+        types: ['Ghost', 'Grass'],
+        bs: { hp: 95, at: 100, df: 122, sa: 85, sd: 75, sp: 54 },
+        weightkg: 39,
+        abilities: { 0: 'Pickup' },
+        baseSpecies: 'Jackourd'
     },
     'Kingler-Gmax': {
         types: ['Water'],
@@ -8225,12 +8326,26 @@ var SS_PATCH = {
         nfe: true,
         baseSpecies: 'Linoone'
     },
-    'Malamar-Variant': {
+    'Lycanroc-Arctara': {
+        types: ['Rock', 'Ice'],
+        bs: { hp: 95, at: 70, df: 80, sa: 55, sd: 120, sp: 67 },
+        weightkg: 25,
+        abilities: { 0: 'Fur Coat' },
+        baseSpecies: 'Lycanroc'
+    },
+    'Malamar-Alola': {
         types: ['Dark', 'Water'],
         bs: { hp: 86, at: 102, df: 88, sa: 48, sd: 95, sp: 63 },
         weightkg: 47,
         abilities: { 0: 'Keen Eye' },
         baseSpecies: 'Malamar'
+    },
+    'Magcargo-Galar': {
+        types: ['Steel', 'Poison'],
+        bs: { hp: 60, at: 50, df: 60, sa: 90, sd: 60, sp: 110 },
+        weightkg: 55,
+        abilities: { 0: 'Steam Engine' },
+        baseSpecies: 'Magcargo'
     },
     Magearna: { otherFormes: ['Magearna-Original'] },
     'Magearna-Original': {
@@ -8284,7 +8399,7 @@ var SS_PATCH = {
         abilities: { 0: 'Neutralizing Gas' },
         nfe: true
     },
-    'Mienshao-Variant': {
+    'Mienshao-Yaoguai': {
         types: ['Fighting', 'Ghost'],
         bs: { hp: 65, at: 125, df: 60, sa: 105, sd: 60, sp: 95 },
         weightkg: 35.5,
@@ -8341,12 +8456,24 @@ var SS_PATCH = {
         weightkg: 58.2,
         abilities: { 0: 'Tangled Feet' }
     },
+    Musasoar: {
+        types: ['Grass', 'Flying'],
+        bs: { hp: 109, at: 108, df: 83, sa: 72, sd: 87, sp: 76 },
+        weightkg: 180,
+        abilities: { 0: 'Chlorophyll' }
+    },
     Nickit: {
         types: ['Dark'],
         bs: { hp: 40, at: 28, df: 28, sa: 47, sd: 52, sp: 50 },
         weightkg: 8.9,
         abilities: { 0: 'Run Away' },
         nfe: true
+    },
+    Nown: {
+        types: ['Psychic'],
+        bs: { hp: 108, at: 91, df: 28, sa: 132, sd: 23, sp: 98 },
+        weightkg: 5,
+        abilities: { 0: 'Protean' }
     },
     Obstagoon: {
         types: ['Dark', 'Normal'],
@@ -8472,6 +8599,14 @@ var SS_PATCH = {
         abilities: { 0: 'Overgrow' },
         baseSpecies: 'Rillaboom'
     },
+    'Roggenrola-Kalos': {
+        types: ['Rock', 'Electric'],
+        bs: { hp: 55, at: 25, df: 85, sa: 75, sd: 25, sp: 15 },
+        weightkg: 18,
+        abilities: { 0: 'Sturdy' },
+        nfe: true,
+        baseSpecies: 'Roggenrola'
+    },
     Rolycoly: {
         types: ['Rock'],
         bs: { hp: 30, at: 40, df: 50, sa: 40, sd: 50, sp: 30 },
@@ -8513,6 +8648,13 @@ var SS_PATCH = {
         abilities: { 0: 'Sand Spit' },
         baseSpecies: 'Sandaconda'
     },
+    'Scolipede-Variant': {
+        types: ['Bug', 'Ground'],
+        bs: { hp: 100, at: 100, df: 49, sa: 85, sd: 39, sp: 112 },
+        weightkg: 200.5,
+        abilities: { 0: 'Poison Heal' },
+        baseSpecies: 'Scolipede'
+    },
     Scorbunny: {
         types: ['Fire'],
         bs: { hp: 50, at: 71, df: 40, sa: 40, sd: 40, sp: 69 },
@@ -8525,6 +8667,13 @@ var SS_PATCH = {
         bs: { hp: 70, at: 105, df: 120, sa: 60, sd: 120, sp: 48 },
         weightkg: 30,
         abilities: { 0: 'Shed Skin' }
+    },
+    'Shiinotic-Kalos': {
+        types: ['Poison', 'Fairy'],
+        bs: { hp: 60, at: 45, df: 60, sa: 90, sd: 80, sp: 70 },
+        weightkg: 11.5,
+        abilities: { 0: 'Illuminate' },
+        baseSpecies: 'Shiinotic'
     },
     Silicobra: {
         types: ['Ground'],
@@ -8564,6 +8713,12 @@ var SS_PATCH = {
         abilities: { 0: 'Flash Fire' },
         nfe: true
     },
+    Skiversnow: {
+        types: ['Ice', 'Grass'],
+        bs: { hp: 90, at: 92, df: 55, sa: 92, sd: 65, sp: 100 },
+        weightkg: 135.5,
+        abilities: { 0: 'Snow Warning' }
+    },
     Skwovet: {
         types: ['Normal'],
         bs: { hp: 70, at: 55, df: 55, sa: 35, sd: 35, sp: 25 },
@@ -8592,6 +8747,21 @@ var SS_PATCH = {
         nfe: true,
         abilities: { 0: 'Gluttony' },
         baseSpecies: 'Slowpoke'
+    },
+    'Slugma-Galar': {
+        types: ['Steel'],
+        bs: { hp: 40, at: 40, df: 40, sa: 70, sd: 40, sp: 20 },
+        weightkg: 35,
+        nfe: true,
+        abilities: { 0: 'Steam Engine' },
+        baseSpecies: 'Slugma'
+    },
+    'Slurpuff-Variant': {
+        types: ['Poison'],
+        bs: { hp: 82, at: 80, df: 86, sa: 85, sd: 75, sp: 72 },
+        weightkg: 5,
+        abilities: { 0: 'Sticky Hold' },
+        baseSpecies: 'Slurpuff'
     },
     Solotl: {
         types: ['Fire', 'Dragon'],
@@ -8628,6 +8798,27 @@ var SS_PATCH = {
         abilities: { 0: 'Grim Neigh' },
         gender: 'N'
     },
+    'Starmie-Variant': {
+        types: ['Rock'],
+        bs: { hp: 60, at: 75, df: 85, sa: 100, sd: 85, sp: 115 },
+        weightkg: 80,
+        abilities: { 0: 'Dazzling' },
+        baseSpecies: 'Starmie'
+    },
+    'Staryu-Variant': {
+        types: ['Rock'],
+        bs: { hp: 30, at: 45, df: 55, sa: 70, sd: 55, sp: 85 },
+        weightkg: 34.5,
+        abilities: { 0: 'Dazzling' },
+        baseSpecies: 'Staryu',
+        nfe: true
+    },
+    Stokomotive: {
+        types: ['Rock', 'Fire'],
+        bs: { hp: 80, at: 100, df: 70, sa: 100, sd: 48, sp: 115 },
+        weightkg: 310.5,
+        abilities: { 0: 'Steam Engine' }
+    },
     Stonjourner: {
         types: ['Rock'],
         bs: { hp: 100, at: 125, df: 135, sa: 20, sd: 20, sp: 70 },
@@ -8640,6 +8831,14 @@ var SS_PATCH = {
         weightkg: 20.5,
         abilities: { 0: 'Mimicry' },
         baseSpecies: 'Stunfisk'
+    },
+    'Swirlix-Variant': {
+        types: ['Grass', 'Poison'],
+        bs: { hp: 62, at: 48, df: 66, sa: 59, sd: 57, sp: 49 },
+        weightkg: 3.5,
+        abilities: { 0: 'Sticky Hold' },
+        baseSpecies: 'Swirlix',
+        nfe: true
     },
     Tenoris: {
         types: ['Ice', 'Dragon'],
@@ -8723,6 +8922,14 @@ var SS_PATCH = {
         abilities: { 0: 'Unseen Fist' },
         baseSpecies: 'Urshifu'
     },
+    'Venipede-Variant': {
+        types: ['Bug', 'Ground'],
+        bs: { hp: 50, at: 45, df: 39, sa: 45, sd: 24, sp: 57 },
+        weightkg: 5.3,
+        abilities: { 0: 'Poison Heal' },
+        baseSpecies: 'Venipede',
+        nfe: true
+    },
     Venomicon: {
         types: ['Poison', 'Flying'],
         bs: { hp: 85, at: 70, df: 113, sa: 118, sd: 90, sp: 64 },
@@ -8752,6 +8959,20 @@ var SS_PATCH = {
         weightkg: 16,
         abilities: { 0: 'Levitate' },
         baseSpecies: 'Weezing'
+    },
+    'Whirlipede-Variant': {
+        types: ['Bug', 'Ground'],
+        bs: { hp: 60, at: 55, df: 79, sa: 55, sd: 64, sp: 47 },
+        weightkg: 58.5,
+        abilities: { 0: 'Poison Heal' },
+        baseSpecies: 'Whirlipede',
+        nfe: true
+    },
+    Whiscazu: {
+        types: ['Water', 'Ground'],
+        bs: { hp: 110, at: 78, df: 78, sa: 116, sd: 81, sp: 70 },
+        weightkg: 23.6,
+        abilities: { 0: 'Oblivious' }
     },
     Wooloo: {
         types: ['Normal'],
