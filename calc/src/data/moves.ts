@@ -4136,7 +4136,7 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
 const SS: {[name: string]: MoveData} = extend(true, {}, SM, SS_PATCH);
 
 const LGPE_MOVES = [
-  'Baddy Bad',
+  //'Baddy Bad',
   'Bouncy Bubble',
   'Buzzy Buzz',
   'Freezy Frost',

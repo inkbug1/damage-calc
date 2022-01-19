@@ -4121,7 +4121,6 @@ var SS_PATCH = {
 };
 var SS = (0, util_1.extend)(true, {}, SM, SS_PATCH);
 var LGPE_MOVES = [
-    'Baddy Bad',
     'Bouncy Bubble',
     'Buzzy Buzz',
     'Freezy Frost',
