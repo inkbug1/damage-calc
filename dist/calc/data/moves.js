@@ -2817,6 +2817,17 @@ var SM_PATCH = {
 };
 var SM = (0, util_1.extend)(true, {}, XY, SM_PATCH);
 var SS_PATCH = {
+    'Plaque Fang': {
+        bp: 80,
+        type: 'Poison',
+        category: 'Physical',
+        secondaries: true,
+        makesContact: true,
+        isBite: true
+    },
+    Flurry: { bp: 25, category: 'Physical', type: 'Flying', maxPower: 130, zp: 140 },
+    Dispersion: { bp: 90, type: 'Normal', category: 'Special', target: 'allAdjacentFoes', zp: 175, maxPower: 130 },
+    'Axon Rush': { bp: 0, type: 'Electric' },
     'Apple Acid': {
         bp: 80,
         type: 'Grass',
@@ -3466,14 +3477,6 @@ var SS_PATCH = {
         category: 'Physical',
         zp: 185,
         maxPower: 140
-    },
-    'Plaque Fang': {
-        bp: 80,
-        type: 'Poison',
-        category: 'Physical',
-        secondaries: true,
-        makesContact: true,
-        isBite: true
     },
     'Pyro Ball': {
         bp: 120,

@@ -2830,6 +2830,17 @@ const SM_PATCH: {[name: string]: DeepPartial<MoveData>} = {
 const SM: {[name: string]: MoveData} = extend(true, {}, XY, SM_PATCH);
 
 const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
+  'Plaque Fang': {
+	bp: 80,
+	type: 'Poison',
+	category: 'Physical',
+	secondaries: true,
+	makesContact: true,
+	isBite: true,
+  },
+  Flurry: {bp: 25, category: 'Physical', type: 'Flying', maxPower: 130, zp: 140},
+  Dispersion: {bp: 90, type: 'Normal', category: 'Special', target: 'allAdjacentFoes', zp: 175, maxPower: 130},
+  'Axon Rush': {bp: 0, type: 'Electric'},
   'Apple Acid': {
     bp: 80,
     type: 'Grass',
@@ -3479,14 +3490,6 @@ const SS_PATCH: {[name: string]: DeepPartial<MoveData>} = {
     category: 'Physical',
     zp: 185,
     maxPower: 140,
-  },
-  'Plaque Fang': {
-	bp: 80,
-	type: 'Poison',
-	category: 'Physical',
-	secondaries: true,
-	makesContact: true,
-	isBite: true,
   },
   'Pyro Ball': {
     bp: 120,

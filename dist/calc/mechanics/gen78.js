@@ -659,7 +659,7 @@ function calculateBPModsSMSS(gen, attacker, defender, move, field, desc, basePow
         (attacker.hasAbility('Analytic') &&
             (turnOrder !== 'first' || field.defenderSide.isSwitching === 'out')) ||
         (attacker.hasAbility('Tough Claws') && move.flags.contact) ||
-        (attacker.hasAbility('Punk Rock') && move.flags.sound)) {
+        ((attacker.hasAbility('Punk Rock') || attacker.hasAbility('Blowout')) && move.flags.sound)) {
         bpMods.push(5325);
         desc.attackerAbility = attacker.ability;
     }
@@ -825,7 +825,7 @@ function calculateAtModsSMSS(gen, attacker, defender, move, field, desc) {
         desc.defenderAbility = defender.ability;
     }
     if ((attacker.hasItem('Thick Club') &&
-        attacker.named('Cubone', 'Marowak', 'Marowak-Alola', 'Marowak-Alola-Totem') &&
+        attacker.named('Cubone', 'Marowak', 'Marowak-Alola', 'Marowak-Alola-Totem', 'Resurrectric') &&
         move.category === 'Physical') ||
         (attacker.hasItem('Deep Sea Tooth') &&
             attacker.named('Clamperl') &&
